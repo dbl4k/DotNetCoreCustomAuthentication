@@ -66,4 +66,6 @@ This is a demo on setting up one method, or Scheme. I've consistently called it 
 
 Also, for neatness, don't try to cram different fundamental auth methods into one extension, seperate them out. i.e. Cookie Authentication should probably not be combined with Header authentication. Just create a suitable Handler and Options for each and add to the Extensions, then you can chain them up independently!
 
+Happy breadmaking!
+
 - dbl4k, 2018-02-11
