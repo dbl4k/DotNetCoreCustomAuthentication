@@ -1,22 +1,20 @@
 # DotNetCore CustomAuthentication
 
-A primer on how to use the standard [Authorize] filter attribute and dynamically generate/read User Claims 
-with non-standard authentication methods.
+A brief, informal primer on how to use the standard **Authorize** filter attribute, with all the goodness of on-the-fly **User** & **UserClaims** objects, thru non-standard authentication methods.
 
-dot net is great at giving you almost out-of-the-box identity management developer experience. 
-The most obvious choice is the **Identity** framework with all it's baked in shortcuts to integrate 
-with entity framework persistence etc..
+dot net is great at giving you an out-of-the-box identity management developer experience. 
+The most obvious choice in any greenfield is the **Identity** framework with all it's shortcuts to integrate 
+with entity framework, including pre-rolled external provider logic for a wide range of well known services and authentication providers.
 
-Also there's some pre-rolled external auth providers for a wide range of well known services and styles: 
-Facebook, Google to the more generalized OAuth 2.
+This is all great, but what if you're in a position where you need to authenticate using a third party service that *doesn't* follow any of these mechanisms? 
 
-This is all very great, but what if you're in a position where you need to authenticate against a third party who doesn't follow any of these standards? What if you don't have a SQL Server available? What if you need to do something so out of the norm but you need to implement in a standard, declarative fashion rather than going full-hack on it.
+What if you don't have a SQL Server available? 
 
-Good news, it's totally possible! 
+What if you need to do something a bit leftfield, but you still want to integrate it as cleanly as possible.
 
-But there's not much in the way of documentation, writeup or usage example in the wild right now.
+You're probably here because you've been running in circles. Admittedly, there's not a good amount of information in the wild on implemnting bespoke authentication via .net core 2.0 right now.
 
-Onward!
+Good news: It's completely possible by implementing your own **Extension**, **Options** and **Handler** classes - not as scary as it sounds. Stick with me.
 
 A basic structure you'd use to achieve this could be:
 
@@ -28,7 +26,7 @@ A basic structure you'd use to achieve this could be:
   * [AuthenticationBuilderExtensions](https://github.com/dbl4k/DotNetCoreCustomAuthentication/blob/master/DotNetCoreCustomAuthentication/Extensions/AuthenticationBuilderExtensions.cs)
 * [Startup](https://github.com/dbl4k/DotNetCoreCustomAuthentication/blob/master/DotNetCoreCustomAuthentication/Startup.cs)
 * Controllers
- * [ValuesController.cs](https://github.com/dbl4k/DotNetCoreCustomAuthentication/blob/master/DotNetCoreCustomAuthentication/Controllers/ValuesController.cs)
+  * [ValuesController.cs](https://github.com/dbl4k/DotNetCoreCustomAuthentication/blob/master/DotNetCoreCustomAuthentication/Controllers/ValuesController.cs)
 ## The Breakdown
 
 Folder          | Class                           | Purpose
@@ -62,9 +60,11 @@ public void ConfigureServices(IServiceCollection services)
 
 ## Recommendations: 
 
-This is a demo on setting up one method, or Scheme. I've consistently called it *CustomAuthentication...*. I do recommend using a relevant naming convention. 
+This is a demo on setting up one method, or **Authentication Scheme** as it's referred to. 
 
-Also, for neatness, don't try to cram different fundamental auth methods into one extension, seperate them out. i.e. Cookie Authentication should probably not be combined with Header authentication. Just create a suitable Handler and Options for each and add to the Extensions, then you can chain them up independently!
+In the real world you wouldn't call these classes **CustomAuthentication...**, you'd probably choose soemthing more relevant to the actual authentication mechanism you're using.
+
+Also, for neatness, don't try to cram different fundamental auth methods into one extension, seperate them out. i.e. Cookie Authentication should probably not be combined with Header Authentication. Just create a suitable Handler and Options for each and add to the Extension builder, then you can chain them up independently!
 
 Happy breadmaking!
 
