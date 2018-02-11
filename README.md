@@ -95,3 +95,7 @@ One last thing, might sound obvious, but don't hardcode credentials and sensitiv
 Happy breadmaking!
 
 - dbl4k, 2018-02-11
+
+## Credits
+
+[Ignas Sakalauskas - Custom Authentication in ASP.NET Core 2.0](https://ignas.me/tech/custom-authentication-asp-net-core-20/)
