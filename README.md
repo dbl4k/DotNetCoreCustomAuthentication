@@ -8,7 +8,7 @@ with entity framework, including pre-rolled external provider logic for a wide r
 
 This is all great, but what if you're in a position where you need to authenticate using a third party service that *doesn't* follow any of these standard mechanisms? 
 
-What if you have no persisted user stores: Let's say the user details are coming from an external provider during authentication. 
+What if you have no persisted user stores: Let's say the user details are coming from an external provider during authentication. You have no need or reason to persist or maintain your own local user store.
 
 ## What if you need to do something a bit leftfield, but you still want to integrate it as cleanly as possible via Identity.
 
