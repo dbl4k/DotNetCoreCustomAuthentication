@@ -35,7 +35,7 @@ Authentication\ | CustomAuthentication            | Defines the partial class, c
 Authentication\ | CustomAuthenticationOptions     | A custom options object that you can populate with neccessary values and pass to the handler during instantiation
 Authentication\ | CustomAuthenticationHandler     | This is where you can plumb in your custom authentication logic, you have full acccess to the **Request**, **Response** including headers, cookies, urlparams, body etc.. The **Handler** method must return a relevant **AuthenticateResult**.
 Extensions\     | AuthenticationBuilderExtensions | Binds the **Options** and **Handler** together into an AddCustomAuthentication **Extension**, which will be used in Startup (see fig i. below).
-\               | Startup                         | Utilises the **AddCustomAuthentication** extension and passes it the **Options** when needed.
+\               | Startup                         | Utilises the **AddCustomAuthentication** extension and passes it a populated **Options** instance when needed.
 Controllers\    | ValuesController                | A brief example of extracting Claims values from the User object we created during authentication.
 
 ### fig i. Chaining the fluent **AddCustomAuthentication** extension
