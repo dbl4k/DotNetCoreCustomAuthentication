@@ -12,7 +12,7 @@ What if you have no persisted user stores: Let's say the user details are coming
 
 ## What if you need to do something a bit leftfield, but you still want to integrate it as cleanly as possible via Identity.
 
-You're probably here because you've been running in circles. Admittedly, there's not a good amount of information in the wild on implemnting bespoke authentication via .net core 2.0 right now.
+You're probably here because you've been running in circles. Admittedly, there's not a good amount of information in the wild on implementing bespoke authentication via .net core 2.0 right now.
 
 Good news: It's completely possible by implementing your own **Extension**, **Options** and **Handler** classes - not as scary as it sounds. Stick with me.
 
