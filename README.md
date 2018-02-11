@@ -58,6 +58,29 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
+## Usage
+
+GET http://localhost:63276/api/values
+
+Using **Request** Headers:
+
+| Key           | Value                   |
+| ---           | ---                     |
+| Authorization | Bearer MySuperSecretKey |
+
+Should provide you with a **Response** containing the randomly generated name set as UserClaim *FirstName* and *LastName* during the authentication process.
+
+```json
+[
+    "Tommy",
+    "Jones"
+]
+```
+
+In reality, the names wouldn't be randomly generated, they could be provided by an external source that you're authenticating with.
+
+You could add other claim key/value pairs, FirstName and LastName are just some obvious examples.
+
 ## Recommendations: 
 
 This is a demo on setting up one method, or **Authentication Scheme** as it's referred to. 
