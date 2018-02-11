@@ -12,9 +12,9 @@ What if you have no persisted user stores: Let's say the user details are coming
 
 ## What if you need to do something a bit leftfield, but you still want to integrate it as cleanly as possible via Identity.
 
-You're probably here because you've been running in circles. Admittedly, there's not a good amount of information in the wild on implementing bespoke authentication via .net core 2.0 right now.
+You're probably here because you've been running in circles. Admittedly, there's not a good accessible amount of information in the wild on implementing bespoke authentication via .net core 2.0 right now. Not even recently published tomes seem to touch on this.
 
-Good news: It's completely possible by implementing your own **Extension**, **Options** and **Handler** classes - not as scary as it sounds. Stick with me.
+Good news: It's completely possible, and ridiculously easy, by implementing your own **Extension**, **Options** and **Handler** classes - not as scary as it sounds. Stick with me.
 
 A basic structure you'd use to achieve this could be:
 
@@ -90,7 +90,7 @@ In the real world you wouldn't call these classes **CustomAuthentication...**, y
 Also, for neatness, don't try to cram different fundamental auth methods into one extension, seperate them out. i.e. Cookie Authentication should probably not be combined with Header Authentication. Just create a suitable Handler and Options for each and add to the Extension builder, then you can chain them up in Startup independently!
 
 
-One last thing, might sound obvious, but don't hardcode credentials and sensitive information into your code. Bad! I've done it here for brevity's sake. You'll want to feed these into the Options via your IConfiguration implementation, this is a whole other discipline I won't go into here ([best practises](https://docs.microsoft.com/en-us/aspnet/core/security/app-secrets?tabs=visual-studio))
+One last thing, might sound obvious, but don't hardcode credentials and sensitive information into your code. Bad! I've done it here for brevity's sake. You'll want to feed these into the Options via your IConfiguration implementation, this is a whole other discipline I won't go into here ([best practices](https://docs.microsoft.com/en-us/aspnet/core/security/app-secrets?tabs=visual-studio))
 
 Happy breadmaking!
 
