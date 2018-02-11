@@ -4,7 +4,7 @@ A brief, informal primer on how to use the standard **Authorize** filter attribu
 
 .net is great at giving you an out-of-the-box identity management developer experience, removing the repeated drawl and oft improperly implemented trudge of writing your own authentication systems for every web app you produce. 
 The most obvious choice in any [greenfield](https://en.wikipedia.org/wiki/Greenfield_project) is the **Identity** framework with all it's shortcuts to integrate 
-with entity framework, including pre-rolled external provider logic for a wide range of [well known services and authentication schemes](https://docs.microsoft.com/en-us/aspnet/core/migration/1x-to-2x/identity-2x).
+with entity framework, including pre-rolled external provider logic for a wide range of [well known services and authentication schemes](https://docs.microsoft.com/en-us/aspnet/core/migration/1x-to-2x/identity-2x) and even some [additional community supported providers](https://github.com/aspnet-contrib/AspNet.Security.OAuth.Providers/tree/dev/src).
 
 This is all great, but what if you're in a position where you need to authenticate using a third party service that *doesn't* follow any of these standard mechanisms? 
 
