@@ -2,15 +2,15 @@
 
 A brief, informal primer on how to use the standard **Authorize** filter attribute, with all the goodness of on-the-fly **User** & **UserClaims** objects, thru non-standard authentication methods.
 
-dot net is great at giving you an out-of-the-box identity management developer experience. 
-The most obvious choice in any greenfield is the **Identity** framework with all it's shortcuts to integrate 
-with entity framework, including pre-rolled external provider logic for a wide range of well known services and authentication providers.
+.net is great at giving you an out-of-the-box identity management developer experience, removing the repeated drawl and oft improperly implemented trudge of writing your own authentication systems for every web app you produce. 
+The most obvious choice in any [greenfield](https://en.wikipedia.org/wiki/Greenfield_project) is the **Identity** framework with all it's shortcuts to integrate 
+with entity framework, including pre-rolled external provider logic for a wide range of well known services () and authentication providers.
 
-This is all great, but what if you're in a position where you need to authenticate using a third party service that *doesn't* follow any of these mechanisms? 
+This is all great, but what if you're in a position where you need to authenticate using a third party service that *doesn't* follow any of these standard mechanisms? 
 
-What if you don't have a SQL Server available? 
+What if you have no persisted user stores: Let's say the user details are coming from an external provider during authentication. 
 
-What if you need to do something a bit leftfield, but you still want to integrate it as cleanly as possible.
+## What if you need to do something a bit leftfield, but you still want to integrate it as cleanly as possible.
 
 You're probably here because you've been running in circles. Admittedly, there's not a good amount of information in the wild on implemnting bespoke authentication via .net core 2.0 right now.
 
