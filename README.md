@@ -10,7 +10,7 @@ This is all great, but what if you're in a position where you need to authentica
 
 What if you have no persisted user stores: Let's say the user details are coming from an external provider during authentication. 
 
-## What if you need to do something a bit leftfield, but you still want to integrate it as cleanly as possible.
+## What if you need to do something a bit leftfield, but you still want to integrate it as cleanly as possible via Identity.
 
 You're probably here because you've been running in circles. Admittedly, there's not a good amount of information in the wild on implemnting bespoke authentication via .net core 2.0 right now.
 
