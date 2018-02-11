@@ -87,7 +87,7 @@ This is a demo on setting up one method, or **Authentication Scheme** as it's re
 
 In the real world you wouldn't call these classes **CustomAuthentication...**, you'd probably choose soemthing more relevant to the actual authentication mechanism you're using.
 
-Also, for neatness, don't try to cram different fundamental auth methods into one extension, seperate them out. i.e. Cookie Authentication should probably not be combined with Header Authentication. Just create a suitable Handler and Options for each and add to the Extension builder, then you can chain them up independently!
+Also, for neatness, don't try to cram different fundamental auth methods into one extension, seperate them out. i.e. Cookie Authentication should probably not be combined with Header Authentication. Just create a suitable Handler and Options for each and add to the Extension builder, then you can chain them up in Startup independently!
 
 
 One last thing, might sound obvious, but don't hardcode credentials and sensitive information into your code. Bad! I've done it here for brevity's sake. You'll want to feed these into the Options via your IConfiguration implementation, this is a whole other context I won't go into here ([best practises](https://docs.microsoft.com/en-us/aspnet/core/security/app-secrets?tabs=visual-studio))
